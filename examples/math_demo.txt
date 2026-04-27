@@ -1,0 +1,6 @@
+SET x 4
+SET y 5
+ADD total x y
+PRINT total
+MUL answer total 2
+PRINT answer

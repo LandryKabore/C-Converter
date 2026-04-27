@@ -1,0 +1,23 @@
+PRINT "Enter an integer:"
+INPUT n
+SET m n
+
+WHILE m > 1
+SUB m m 2
+ENDWHILE
+
+WHILE m < -1
+ADD m m 2
+ENDWHILE
+
+IF m == 0
+PRINT "Even"
+ENDIF
+
+IF m == 1
+PRINT "Odd"
+ENDIF
+
+IF m == -1
+PRINT "Odd"
+ENDIF

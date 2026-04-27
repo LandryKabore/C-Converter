@@ -1,0 +1,28 @@
+PRINT "Enter string:"
+INPUT text
+
+LEN n text
+SET left 0
+SUB right n 1
+SET is_pal 1
+
+WHILE left < right
+CHAR left_char text left
+CHAR right_char text right
+
+IF left_char != right_char
+SET is_pal 0
+SET left right
+ENDIF
+
+ADD left left 1
+SUB right right 1
+ENDWHILE
+
+IF is_pal == 1
+PRINT "Palindrome"
+ENDIF
+
+IF is_pal == 0
+PRINT "Not a palindrome"
+ENDIF

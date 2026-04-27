@@ -1,0 +1,10 @@
+PRINT "Enter text:"
+INPUT text
+PRINT "How many times:"
+INPUT times
+
+SET i 0
+WHILE i < times
+PRINT text
+ADD i i 1
+ENDWHILE

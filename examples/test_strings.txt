@@ -1,0 +1,13 @@
+SET text "cat"
+LEN size text
+PRINT size
+CHAR first text 0
+PRINT first
+CHAR second text 1
+PRINT second
+CONCAT both "he" "llo"
+PRINT both
+SET x 10
+SET y 3
+SUB z x y
+PRINT z

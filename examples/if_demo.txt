@@ -1,0 +1,13 @@
+SET x 4
+SET y 5
+IF x < y
+PRINT "x is less than y"
+ENDIF
+IF x > y
+PRINT "this should not print"
+ENDIF
+IF x == 4
+IF y == 5
+PRINT "nested IF works"
+ENDIF
+ENDIF

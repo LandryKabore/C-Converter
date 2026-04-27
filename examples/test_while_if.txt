@@ -1,0 +1,8 @@
+SET x 1
+WHILE x <= 3
+IF x == 2
+PRINT "middle"
+ENDIF
+PRINT x
+ADD x x 1
+ENDWHILE

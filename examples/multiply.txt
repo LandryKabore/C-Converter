@@ -1,0 +1,6 @@
+PRINT "Enter first number:"
+INPUT a
+PRINT "Enter second number:"
+INPUT b
+MUL result a b
+PRINT result

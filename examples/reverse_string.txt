@@ -1,0 +1,14 @@
+PRINT "Enter string:"
+INPUT text
+
+LEN n text
+SUB i n 1
+SET reversed ""
+
+WHILE i >= 0
+CHAR ch text i
+CONCAT reversed reversed ch
+SUB i i 1
+ENDWHILE
+
+PRINT reversed
