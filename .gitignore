@@ -1,0 +1,12 @@
+# Local / generated
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Build outputs from transpiler / LLVM demo
+output.c
+output
+output_bin
+output.ll
+output_llvm
+*.o

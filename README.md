@@ -202,12 +202,83 @@ int main(void) {
 - Unsupported commands such as `INPUT`, `LEN`, `CHAR`, and `CONCAT` are written into `output.c` as comments instead of being silently ignored.
 - The interpreter can run all example programs, but the transpiler is mainly to demonstrate translating PL-Simple into C.
 
+## Extra Credit II: LLVM Compiler
+
+`llvm_compiler.py` is an optional second “extra credit” compiler. It reads a **restricted integer-only** subset of PL-Simple, builds **LLVM IR** in memory using **llvmlite**, writes it to `output.ll`, then uses **clang** (with an **llc** fallback) to produce a native executable named `output_llvm`.
+
+This is different from the interpreter: it does **not** execute PL-Simple directly in Python. It generates LLVM IR first, then a small native program you can run from the terminal.
+
+### Required install
+
+```bash
+pip3 install llvmlite
+```
+
+You also need **clang** (and optionally **llc**) available on your PATH (for example Xcode Command Line Tools on macOS).
+
+### How to compile a program
+
+From the project folder:
+
+```bash
+python3 llvm_compiler.py examples/llvm_demo.txt
+```
+
+This writes:
+
+- `output.ll` (LLVM IR text)
+- `output_llvm` (native executable)
+
+### How to run the executable
+
+```bash
+./output_llvm
+```
+
+### Expected output for `examples/llvm_demo.txt`
+
+```text
+1
+2
+3
+4
+5
+```
+
+### Supported commands (LLVM compiler subset)
+
+- `SET var integer`
+- `PRINT var`
+- `PRINT integer`
+- `ADD result a b`
+- `SUB result a b`
+- `MUL result a b`
+- `IF left op right`
+- `ENDIF`
+- `WHILE left op right`
+- `ENDWHILE`
+
+### Supported comparison operators
+
+- `==`
+- `!=`
+- `>`
+- `<`
+- `>=`
+- `<=`
+
+### Limitations
+
+- Only **integer** programs are supported (no string literals, no `INPUT`, no `LEN`, `CHAR`, or `CONCAT`).
+- Unsupported commands produce a **clear error** and the compiler exits without overwriting outputs silently.
+
 ## GitHub Submission Note
 
 For submission, commit all project files to your GitHub repository, including:
 
 - `interpreter.py`
 - `transpiler.py`
+- `llvm_compiler.py`
 - `demo.py`
 - `README.md`
 - `examples/` folder
